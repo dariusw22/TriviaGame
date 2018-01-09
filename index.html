@@ -1,0 +1,139 @@
+<<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>90's Trivia Game!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+
+    <body style="background: url(assets/images/theme.png); background-size: cover;">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <div class="title">
+            <h1>90's Trivia Game!</h1>
+        </div>
+
+        <div class="gameContainer">
+            <button type="button" class="btn btn-success" id="startGame" style="background-color: #00CED1f; color: black; margin-left: 650px;">Click To Start!</button>
+        </div>
+
+        <!--<div class="timer" data-seconds-left=20></div>-->
+
+        <div id="timer"></div>
+
+        <div class="questionContainer">
+
+            <div id="question"> What year did the movie "Space Jam" come out?
+                <ul id="answers">
+                    <li><label><input name="question0" value="wrong" type="radio"> 1999</label></li>
+                    <li><label><input name="question0" value="wrong" type="radio"> 2004</label></li>
+                    <li id="correct"><label><input name="question0" value="correct" type="radio"> 1996</label></li>
+                    <li><label><input name="question0" value="wrong" type="radio"> 1987</label></li>
+                </ul>
+            </div>
+
+            <div id="question"> What movie was the #1 family movie in 1997?
+                <ul id="answers">
+                    <li><label><input name="question1" value="wrong" type="radio"> The Borrowers</label></li>
+                    <li id="correct"><label><input name="question1" value="correct" type="radio"> Home Alone 3</label></li>
+                    <li><label><input name="question1" value="wrong" type="radio"> Air Bud</label></li>
+                    <li><label><input name="question1" value="wrong" type="radio"> A Rugrats Vaction</label></li>
+                </ul>
+            </div>
+
+            <div id="question"> The Reebok Kamikaze ll is the signature shoe for what NBA 90's star?
+                <ul id="answers">
+                    <li id="correct"><label><input name="question2" value="correct" type="radio"> Shawn Kemp</label></li>
+                    <li><label><input name="question2" value="wrong" type="radio"> Tim Hardaway</label></li>
+                    <li><label><input name="question2" value="wrong" type="radio"> Gary Payton</label></li>
+                    <li><label><input name="question2" value="wrong" type="radio"> Karl Malone</label></li>
+                </ul>
+            </div>
+
+            <div id="question"> What was the #1 hip hop song of the 90's?
+                <ul id="answers">
+                    <li><label><input name="question3" value="wrong" type="radio"> "Killing Me Softly"- Fugees</label></li>
+                    <li><label><input name="question3" value="wrong" type="radio"> "U Can't Touch This"- Mc Hammer</label></li>
+                    <li id="correct"><label><input name="question3" value="correct" type="radio"> "Juicy"- The Notorious B.I.G ft. Total</label></li>
+                    <li><label><input name="question3" value="wrong" type="radio"> "I'll Be There For You/ You're All I Need To Get By"- Method Man ft. Mary J Blige</label></li>
+                </ul>
+            </div>
+
+            <!--code that holds the score-->
+            <div class="gameContainer">
+                <p class="scoreDisplay">Score: <span id="Score"></span></p>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            //function that hides questions,timer, and score until start button is pressed.
+            $(document).ready(function() {
+                $(".questionContainer").hide();
+                $("#timer").hide();
+                $(".scoreDisplay").hide();
+            });
+
+            //function that unhides the questions, timer and score.
+            $("#startGame").click(function() {
+                $(".questionContainer").show();
+                $("#timer").show();
+                $(".scoreDisplay").show();
+            });
+
+
+            //show the first question 
+            //$($question.get(currentQuestion)).fadeIn();
+
+            // if statment that adds user score.
+            var score = 0;
+            var answer = ("#correct");
+
+
+            document.onclick = function(event) {
+                var score = 0;
+                var answer = ("#correct");
+                var userGuess = event.click;
+
+                if (userGuess === answer) {
+                    score++;
+                    alert("You are correct!")
+
+
+                }
+
+            }
+
+            //function that holds the timer.
+
+            function countDown(sec, elem) {
+                var element = document.getElementById(elem);
+                element.innerHTML = "You have " + sec + " seconds left";
+
+                //Decraments the timer so that it counds backwords.
+                sec--;
+
+                var timer = setTimeout('countDown(' + sec + ',"' + elem + '")', 1000);
+
+                if (sec < 0) {
+                    clearTimeout(timer);
+                    element.innerHTML = 'Time Over!';
+                    alert("Time Over!")
+                }
+
+
+            }
+        </script>
+        <script type="text/javascript">
+            countDown(5, "timer");
+        </script>
+
+
+
+    </body>
+
+    </html>

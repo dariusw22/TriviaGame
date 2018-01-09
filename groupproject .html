@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Hangman : The Game! (A Group Project)</title> 
+</head>
+  
+<body>
+    
+    // Brain Storm!!
+    // On key up function to get the game started.
+    // Generate the word from the list of words.
+    // listen to the input from the user and display the letters that they guess.
+    // Decrement the number of user guesses.
+    // Can not guess the same letter twice.
+    // Make function to hold the score.
+    // Create funtion to reset the game.
+  
+  <h1>Hangman</h1> 
+	<p> Use the Alphabet below to guess the word or may use hint to see a clue</p>
+  
+  <div class="container">
+    <div id="button">
+    </div>
+    <div>
+      <p id="myLives"> </p>
+ //     <p id="clue"> </p>
+ //     <button id="hint"> Hint </button>
+      <button id="reset"> Want to play Again?</button>
+    </div>
+  </div>
+
+  <script> 
+    var letterOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+		var wins = 0;
+		var userGuess = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+		var wins = 0;
+    var losses = 0;
+    var guessesLeft = 8;
+    var guessesSoFar = [];
+		var correctGuess = [];
+		var incorrectGuess = [];
+		var hangmanWord = [];
+		var animals = [
+								Cat,
+								Dog,
+								Chicken,
+								Lion,
+
+]; 
+		document.onkeyup = function(event) {
+     // pick animal from array
+      
+
+      function userGuess(){
+				$("animal from array").append("hangmanWord")
+				console.log(.this)
+};
+      
+      hangmanWord = animals[Math.floor(Math.random() * animals.length)];
+      for (var i = 0; i < letterOptions.length; i++) {
+        
+      }
+        if (hangmanWord[i] === "-") {
+          userGuess.innerHTML ===
+
+                  
+        
+    // Determines which key was pressed by user.
+        var userGuess = event.key;
+        console.log("user guess is " + userGuess)
+    
+   
+    {
+    
+    
+    
+    }  
+  
+  </script>
+</body>
